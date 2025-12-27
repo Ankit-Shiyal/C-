@@ -2,8 +2,8 @@
 #include <string>
 using namespace std;
 
-class Student{
-
+class Student
+{
 private:
     int stu_id;
     string stu_name;
@@ -14,8 +14,8 @@ private:
     string stu_college;
 
 public:
-
- void setData( int id,int age, string name, string course, string city, string email,string college ){
+    void setStudentDetail(int id, string name, int age, string course, string city, string email, string college)
+    {
 
         this->stu_id = id;
         this->stu_name = name;
@@ -24,11 +24,12 @@ public:
         this->stu_city = city;
         this->stu_email = email;
         this->stu_college = college;
-}
-    
-    void getData(){
-        int i;
-        cout << "\nrecord of student " << i + 1 << endl;
+    }
+
+    void getStudentDetail()
+    {
+
+        cout << "\nStudent detail are... " << endl;
 
         cout << "Student ID      : " << stu_id << endl;
         cout << "Student Name    : " << stu_name << endl;
@@ -38,52 +39,61 @@ public:
         cout << "Student Email   : " << stu_email << endl;
         cout << "Student College : " << stu_college << endl;
     }
-
 };
 
 int main()
 {
-    int n;
-
-    cout<< "enter number of student"  <<endl;
+     int n;
+    cout<< "enter number of student";
     cin >> n;
-
     Student s[n];
 
-    for (int i = 0; i < n; i++){
-         int id, age;
-        string name, course, city, email, college;
-        cout << "\nEnter student detail " << i + 1 << endl;
 
-        cout << "Enter ID: ";
+    int id;
+    string name;
+    int age;
+    string course;
+    string city;
+    string email;
+    string college;
+
+    for (int i = 0; i < n; i++)
+    {
+
+        cout << "\nenter student detail " << i + 1 << endl;
+
+        cout << "Enter id :" ;
         cin >> id;
         cin.ignore();
 
-        cout << "Enter Name: ";
-        getline(cin,name);
+        cout << "Enter name :" ;
+        getline(cin, name);
 
-        cout << "Enter Age: ";
+        cout << "Enter age :" ;
         cin >> age;
         cin.ignore();
 
-        cout << "Enter Course: ";
-         getline(cin, course);
-       
-        cout << "Enter City: ";
-         getline(cin,city);
-   
-        cout << "Enter Email: ";   
-         getline(cin,email);
- 
-        cout << "Enter College: ";
-         getline(cin,college);
+        cout << "Enter course :" ;
+        getline(cin, course);
 
-         s[i].setData(id, age, name, course, city, email, college);
+        cout << "Enter city :" ;
+        getline(cin, city);
+
+        cout << "Enter email :" ;
+        getline(cin, email);
+
+        cout << "Enter college :" ;
+        getline(cin, college);
+
+        s[i].setStudentDetail(id, name, age, course, city, email, college);
     }
 
-    for (int i = 0; i < n; i++){
-        s[i].getData();
-    }
+
+    for (int i = 0; i < n; i++)
+    {
+
+        s[i].getStudentDetail();
+    };
 
     return 0;
 }
